@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 *,
 ::before,
 ::after {
@@ -6,3 +7,265 @@
   padding: 0;
 }
 
+html {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80"><image width="4" height="3" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAEklEQVQImWMwMtD/j4wZSBcAAD9BGQFqqeqtAAAAAElFTkSuQmCC" /></svg>');
+  background-color: #191714;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.color-select::selection {
+  background: #4948449a;
+}
+
+/* ******************* HEADER / NAVABAR ******************** */
+
+.container-grid {
+  display: grid;
+  grid-template-rows: 1.5fr 700px 1.5fr;
+  grid-template-columns: 5fr 2fr 2fr;
+  grid-template-areas: 
+  "nav nav nav"
+  "cont cont cont"
+  "footer footer footer"
+  ;
+}
+
+.logo-nav {
+  margin: 20px 550px 0 30px;
+  float: left;
+}
+
+.a-nav {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.2;
+  font-weight: 300;
+}
+
+.nav-animation {
+  background: #000;
+  height: 93px;
+  width: 100%;
+  position: fixed;
+  opacity: 1;
+  transition: all ease 0.5s;
+}
+
+.a-nav::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 3px;
+  background: red;
+  opacity: 0;
+  cursor: default;
+  transition: 0.4s ease-in-out;
+}
+
+.li-nav:hover > .a-nav::after {
+  opacity: 1;
+  width: 45px;
+  transition: 0.4s ease-in-out;
+}
+
+.li-nav {
+  list-style: none;
+}
+
+.list-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+/* ************************ AREAS ****************** */
+
+.header {
+
+  grid-area: nav;
+}
+
+.main {
+
+  grid-area: cont;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* ************************ MAIN ****************** */
+
+.bg-text {
+  position: absolute;
+  top: 125px;
+  left: 450px;
+  z-index: -1;
+  animation: animate-img 2s;
+}
+
+.text-main {
+  margin: 100px 0 0 170px;
+}
+
+.title {
+  font-family: 'Julius Sans One', sans-serif; 
+  font-size: 100px;
+  font-weight: 100;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-bottom: 33px;
+}
+
+.span-0::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 228px;
+  display: block;
+  height: 6.5px;
+  width: 10.3%;
+  background: red;
+  z-index: -1;
+  animation: animate-bar 2s;
+}
+
+.span-0 {
+  animation: animate-txt 2s;
+}
+
+.text-1 {
+  width: 430px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  animation: animate-txt 2s;
+}
+
+.text-2 {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 110px;
+  margin-left: 20px;
+  animation: animate-txt 2s;
+}
+
+.settings {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background-color: #1f1e1a;
+  color: #494844;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  padding: 7px;
+}
+
+.span-1 {
+  margin-left: 192px;
+}
+
+.span-2 {
+  margin-left: 178px;
+  position: relative;
+  top: 10.5px;
+}
+
+.span-1::after {
+  position: absolute;
+  content: "";
+  background-image: url(./media/scroll.png);
+  background-repeat: no-repeat;
+  height: 90px;
+  width: 90px;
+  left: 22%;
+  animation: animate-scroll 1.5s infinite linear;
+}
+
+/* *********************** FOOTER ******************** */
+
+.footer {
+  text-align: center;
+  background-color: #1f1e1a;
+  padding: 30px;
+}
+
+.copyright {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 20px;
+  transition: all ease 0.5s;
+}
+
+.copyright:hover {
+  transition: all ease 0.5s;
+  font-size: 20.5px;
+}
+
+.link-footer {
+  text-decoration: none;
+  background-color: #1f1e1a;
+  color: #494844d2;
+}
+
+/* ************************ KEYFRAMES ***************** */
+
+@keyframes animate-bar {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-img {
+  0% {
+    opacity: 0;
+    filter: blur(1.1em);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes animate-txt {
+  0% {
+    opacity: 0;
+    transform: translateX(1600px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ********************* END ****************** */
